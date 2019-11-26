@@ -1,0 +1,26 @@
+.week-header {
+    background-color: aliceblue;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.week-loot-list {
+    padding: 20px;
+}
+
+.week-saved-member-list {
+
+}
+
+.hide {
+    display: none;
+}
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 95%;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 95%;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 95%;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Weekly View</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <script src="./assets/popper/umd/popper.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="./js/WeekModel.js"></script>
+    <script src="./js/WeekView.js"></script>
+    <script src="./js/WeekController.js"></script>
+    <script src="./js/PlayerWeeklyLootCard.js"></script>
+    <script src="./js/Controller.js"></script>
+</head>
+
+<body>
+    <!-- root -->
+    <div class="container">
+        <div class="jumbotron-fluid week-header">
+            <h1 class="display-5">Week x</h1>
+            <hr class="my-3">
+            <p class="lead">Eden's Gate</p>
+        </div>
+        <!-- nav for form -->
+        <div class="container">
+            <ul class="nav nav-tabs nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Turn 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Turn 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Turn 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1">Turn 4</a>
+                </li>
+            </ul>
+
+            <!-- List of members + loot -->
+            <form id="t1Form">
+                <!-- add members -->
+                <div class="row my-2">
+                    <div class="col-md-8 px-5">
+                        <h5 class="display-5" style="padding-top: 12px;">Loot Table</h5>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <button class="btn btn-primary" id="t1AddMemberBtn"><i class="fa fa-plus-circle"></i> Add
+                            Member</button>
+                    </div>
+                </div>
+                <!-- member card list -->
+                <div class="row form-group week-loot-list py-2" id="t1MemberCardRoot">
+                    <div class="card col-md-12 p-0 my-1">
+                        <div class="card-header input-group">
+                            <input type="text" class="form-control" aria-label="Member 1 Name"
+                                placeholder="Member 1 Name">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select
+                                    from
+                                    List</button>
+                                <div class="dropdown-menu week-saved-member-list">
+                                    <a class="dropdown-item" href="#">Saved Member 1</a>
+                                    <a class="dropdown-item" href="#">Saved Member 2</a>
+                                    <a class="dropdown-item" href="#">Saved Member 3</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><span class="fa fa-plus-circle"></span> Add
+                                        New</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h5 class="card-title">Loot List</h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button class="btn btn-primary" style="margin-top:-10px;">
+                                        <span class="fa fa-plus-circle"></span> Add Loot Item</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- loot drop down here -->
+                                <select class="form-control col-md-3" id="turn-dropdown" name="T1">
+                                    <option value="T1">Turn 1</option>
+                                    <option value="T2">Turn 2</option>
+                                    <option value="T3">Turn 3</option>
+                                    <option value="T4">Turn 4</option>
+                                </select>
+                                <!-- loot drop down here -->
+                                <!-- <select class="form-control col-md-3" name="T1"> -->
+                                <select class="form-control col-md-9" name="T1">
+                                    <option disabled selected value="0">Loot...</option>
+                                    <option value="Head">Head</option>
+                                    <option value="Body">Body</option>
+                                    <option value="Hands">Hands</option>
+                                    <option value="Chest">Chest</option>
+                                    <option value="Belt">Belt</option>
+                                    <option value="Legs">Legs</option>
+                                    <option value="Feet">Feet</option>
+                                    <option value="Earring">Earring</option>
+                                    <option value="Necklace">Necklace</option>
+                                    <option value="Bracelet">Bracelet</option>
+                                    <option value="Ring">Ring</option>
+                                    <option value="Weapon">Weapon</option>
+                                    <option value="Solvent">Solvent (Weapon)</option>
+                                    <option value="Oil">Oil (Accessory)</option>
+                                    <option value="Twine">Twine (Armor)</option>
+                                    <option value="Mount">Mount</option>
+                                    <option value="Song">Song</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- end of member card list -->
+                </div>
+
+
+
+            </form>
+
+        </div>
+        <!-- nav bar to other parts of app -->
+        <!-- <div class="pos-f-t">
+            <nav class="navbar navbar-dark bg-dark fixed-bottom container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <button class="col-md-4">Home (List of weeks)</button>
+                <button class="col-md-4"><span class="fa fa-plus-circle"></span></button>
+                <button class="col-md-4">User Profile</button>
+
+            </nav>
+        </div> -->
+    </div>
+
+</body>

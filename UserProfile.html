@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script src="./assets/popper/umd/popper.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="./js/UserProfileView.js"></script>
+    <script src="./js/UserProfileModel.js"></script>
+    <script src="./js/UserProfileController.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron-fluid week-header">
+            <div class="row" style="height: 80px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-2"><span class="fa fa-user-circle fa-4x"></span></div>
+                <div class="col-md-9">
+                    <h4 class="display-6 text-left align-items-end">Name</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="savedPlayers">
+            <div class="col-md-8">
+                <h5 class="display-5">Saved Players</h5>
+            </div>
+            <div class="col-md-4 text-right">
+                <button class="btn btn-primary" style="margin-top:-10px;">
+                    <span class="fa fa-plus-circle"></span> Add Player</button>
+            </div>
+        </div>
+    </div>
+</body>
